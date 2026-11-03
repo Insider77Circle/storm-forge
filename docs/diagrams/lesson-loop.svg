@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="320" viewBox="0 0 700 320" role="img" aria-label="STORM FORGE animated lesson loop">
+  <style>
+    .bg { fill: #0a0e1a; }
+    .title { fill: #f2f2f2; font: bold 20px monospace; letter-spacing: 3px; }
+    .box { fill: #12172a; stroke-width: 2; rx: 12; }
+    .box-t { fill: #ffffff; font: bold 14px monospace; text-anchor: middle; }
+    .box-s { fill: #8b93a7; font: 11px monospace; text-anchor: middle; }
+    .ring { fill: none; stroke: #ff2ea6; stroke-width: 2; stroke-dasharray: 10 8; animation: spin 14s linear infinite; transform-origin: 350px 180px; }
+    .flow { stroke: #2dd4ff; stroke-width: 2.5; stroke-dasharray: 8 6; animation: dash 1.2s linear infinite; }
+    .pulse { animation: pulse 1.6s ease-in-out infinite; }
+    @keyframes dash { to { stroke-dashoffset: -14; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+  </style>
+  <rect class="bg" width="700" height="320"/>
+  <text class="title" x="30" y="38">THE LESSON LOOP</text>
+  <circle class="ring" cx="350" cy="180" r="105"/>
+  <g>
+    <line class="flow" x1="350" y1="120" x2="350" y2="96"/>
+    <rect class="box" x="275" y="40" width="150" height="56" stroke="#2dd4ff"/><text class="box-t" x="350" y="64">LAB</text><text class="box-s" x="350" y="82">play it</text>
+    <rect class="box" x="500" y="150" width="150" height="56" stroke="#ff2ea6"/><text class="box-t" x="575" y="174">ATTEMPT</text><text class="box-s" x="575" y="192">run the steps</text>
+    <rect class="box" x="275" y="252" width="150" height="56" stroke="#ffe600"/><text class="box-t" x="350" y="276">ANALYST MODE</text><text class="box-s" x="350" y="294">debrief</text>
+    <rect class="box" x="50" y="150" width="150" height="56" stroke="#39ff88"/><text class="box-t" x="125" y="174">ADAPTIVE DIFF</text><text class="box-s" x="125" y="192">next level</text>
+    <circle class="pulse" cx="350" cy="180" r="10" fill="#ff2ea6"/>
+    <text class="box-s" x="350" y="184" text-anchor="middle" fill="#ffffff" font="bold 11px monospace">YOU</text>
+  </g>
+</svg>

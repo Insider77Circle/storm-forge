@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430" role="img" aria-label="STORM FORGE animated pipeline: objective to lab">
+  <style>
+    .bg { fill: #0a0e1a; }
+    .title { fill: #f2f2f2; font: bold 26px monospace; letter-spacing: 3px; }
+    .sub { fill: #8b93a7; font: 13px monospace; letter-spacing: 2px; }
+    .chip { fill: #141a2e; stroke: #2dd4ff; stroke-width: 1.5; rx: 8; }
+    .chip-t { fill: #2dd4ff; font: bold 12px monospace; text-anchor: middle; }
+    .box { fill: #12172a; stroke-width: 2; rx: 10; }
+    .box-t { fill: #ffffff; font: bold 14px monospace; text-anchor: middle; }
+    .box-s { fill: #8b93a7; font: 11px monospace; text-anchor: middle; }
+    .flow { stroke: #ff2ea6; stroke-width: 2.5; stroke-dasharray: 8 6; animation: dash 1.2s linear infinite; }
+    .flow2 { stroke: #2dd4ff; stroke-width: 2.5; stroke-dasharray: 8 6; animation: dash 1.2s linear infinite; }
+    .pulse { animation: pulse 1.6s ease-in-out infinite; }
+    @keyframes dash { to { stroke-dashoffset: -14; } }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+  </style>
+  <rect class="bg" width="900" height="430"/>
+  <text class="title" x="30" y="42">STORM FORGE</text>
+  <text class="sub" x="30" y="64">FRONTIER AI — DYNAMIC CYBER LESSONS ENGINE</text>
+  <circle class="pulse" cx="860" cy="34" r="8" fill="#ff2ea6"/>
+
+  <!-- module chips -->
+  <g>
+    <rect class="chip" x="30" y="90" width="128" height="30"/><text class="chip-t" x="94" y="109">ONE-CLICK</text>
+    <rect class="chip" x="170" y="90" width="128" height="30"/><text class="chip-t" x="234" y="109">MITRE ATT&amp;CK</text>
+    <rect class="chip" x="310" y="90" width="128" height="30"/><text class="chip-t" x="374" y="109">TOOL EDGE</text>
+    <rect class="chip" x="450" y="90" width="128" height="30"/><text class="chip-t" x="514" y="109">GAME LEVEL</text>
+    <rect class="chip" x="590" y="90" width="140" height="30"/><text class="chip-t" x="660" y="109">VIDEO NARRATE</text>
+    <rect class="chip" x="742" y="90" width="128" height="30"/><text class="chip-t" x="806" y="109">TELEPROMPTER</text>
+  </g>
+
+  <!-- pipeline -->
+  <g>
+    <line class="flow" x1="118" y1="200" x2="168" y2="200"/>
+    <line class="flow" x1="278" y1="200" x2="328" y2="200"/>
+    <line class="flow" x1="438" y1="200" x2="488" y2="200"/>
+    <line class="flow" x1="598" y1="200" x2="648" y2="200"/>
+    <line class="flow" x1="758" y1="200" x2="808" y2="200"/>
+    <rect class="box" x="18" y="170" width="100" height="60" stroke="#2dd4ff"/><text class="box-t" x="68" y="196">OBJECTIVE</text><text class="box-s" x="68" y="214">plain English</text>
+    <rect class="box" x="178" y="170" width="100" height="60" stroke="#2dd4ff"/><text class="box-t" x="228" y="196">PARSER</text><text class="box-s" x="228" y="214">skill + MITRE</text>
+    <rect class="box" x="338" y="170" width="100" height="60" stroke="#ff2ea6"/><text class="box-t" x="388" y="196">SCENARIO</text><text class="box-s" x="388" y="214">narrative lab</text>
+    <rect class="box" x="498" y="170" width="100" height="60" stroke="#ff2ea6"/><text class="box-t" x="548" y="196">SIMULATOR</text><text class="box-s" x="548" y="214">sandbox spec</text>
+    <rect class="box" x="658" y="170" width="100" height="60" stroke="#ffe600"/><text class="box-t" x="708" y="196">SAFETY</text><text class="box-s" x="708" y="214">the gate</text>
+    <rect class="box" x="818" y="170" width="64" height="60" stroke="#39ff88"/><text class="box-t" x="850" y="196">LAB</text><text class="box-s" x="850" y="214">play it</text>
+  </g>
+
+  <!-- tracks -->
+  <g>
+    <rect class="box" x="30" y="280" width="400" height="70" stroke="#2dd4ff"/><text class="box-t" x="230" y="308">BLUE TEAM // DEFENSIVE</text><text class="box-s" x="230" y="328">detect · triage · hunt · respond</text>
+    <rect class="box" x="470" y="280" width="400" height="70" stroke="#ff2ea6"/><text class="box-t" x="670" y="308">RED TEAM // SIMULATED OFFENSE</text><text class="box-s" x="670" y="328">sandbox only · never real targets</text>
+    <line class="flow2" x1="230" y1="280" x2="230" y2="250"/>
+    <line class="flow2" x1="670" y1="280" x2="670" y2="250"/>
+  </g>
+  <text class="sub" x="30" y="400">PARSER → SCENARIO → SIMULATOR → SAFETY → LAB → ANALYST MODE → ADAPTIVE DIFF → NEXT LAB</text>
+</svg>
