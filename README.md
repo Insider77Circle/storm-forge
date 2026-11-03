@@ -100,6 +100,37 @@ docs/
     lesson-loop.svg       # animated adaptive loop
 ```
 
+## Agent-recommended extensions
+
+Five capabilities recommended by an outside agent review, all adopted
+as skeleton modules (grounded against the existing code, not bolted on
+beside it):
+
+| # | Capability | Where | Status |
+| - | ---------- | ----- | ------ |
+| 1 | **Scenario compiler** — objectives into structured, technically realistic environments (networks, hosts, services, vulns) | `src/storm_forge/compiler/` | Skeleton, private-range enforced |
+| 2 | **Live cyber-range orchestration** — actually provision isolated networks, machines, services, vulns | `src/storm_forge/orchestration/` | Interface + dry-run ONLY — see below |
+| 3 | **Adaptive adversary engine** — simulated attacker changes tactics on defender events | `src/storm_forge/adversary/` | Skeleton state machine |
+| 4 | **Learner intelligence** — decision-making, detection rate, response time, mistakes, weaknesses | `src/storm_forge/learner/` | SQLite-backed |
+| 5 | **Recursive scenario generation** — performance data builds harder labs aimed at demonstrated weaknesses | `src/storm_forge/recursion/` | Skeleton, reads the learner store |
+
+Build order that falls out of the dependencies: compiler first (everything
+else consumes its spec), learner intelligence second (recursion needs
+data), recursive generation third, adaptive adversary fourth, live
+orchestration last — it's the only one that touches real infrastructure.
+
+**Orchestration caveat, stated plainly:** the skeleton provisions
+nothing. A real backend must keep ranges isolated (private nets only,
+no egress, no credentials, mandatory teardown) and stay opt-in. Live
+provisioning is the one feature that can cost money and escape a
+sandbox, so it ships as an interface with a dry-run provider until a
+backend earns its guards. Try the whole loop offline:
+
+```bash
+python examples/recursive_demo.py
+python -m storm_forge.cli compile "detect LSASS credential dumping"
+```
+
 ## Roadmap — the rest is yours
 
 - [ ] Plug a frontier model into `Scenario Gen` (provider interface stubbed in code)
