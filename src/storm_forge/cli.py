@@ -17,6 +17,7 @@ import json
 import sys
 from dataclasses import asdict
 
+from storm_forge.compiler import compile_objective
 from storm_forge.engine import (
     build_lab,
     check_lab,
@@ -48,10 +49,15 @@ def _run_pipeline(objective: str) -> dict:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="storm-forge")
     sub = parser.add_subparsers(dest="command", required=True)
-    for name in ("one-click", "narrate", "teleprompter"):
+    for name in ("one-click", "narrate", "teleprompter", "compile"):
         p = sub.add_parser(name)
         p.add_argument("objective")
     args = parser.parse_args(argv)
+
+    if args.command == "compile":
+        spec = compile_objective(args.objective)
+        print(json.dumps(asdict(spec), indent=2, default=str))
+        return 0
 
     if args.command == "one-click":
         print(json.dumps(_run_pipeline(args.objective), indent=2))
